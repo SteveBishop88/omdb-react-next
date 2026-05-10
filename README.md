@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OMDb Movie Explorer (Next.js 16 Edition)
 
-## Getting Started
+A high-performance movie exploration dashboard built with **Next.js 16** and **Turbopack**. This project is a React-based evolution of a modern web architecture, featuring persistent state management and a multi-database backend.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Nuxt-Style Persistence:** Utilizes **Zustand** to replicate the "persistent state" behavior of Nuxt 4. Search results, years, and genre selections stay in memory even when navigating between movie details and search lists.
+* **Complex SQLite Backend:** * Queries movie metadata using advanced `JSON_EACH` and `JSON_EXTRACT` logic to handle nested genre structures.
+    * Joins data across two separate SQLite databases (`movies.db` and `ratings.db`) for a unified view.
+* **Third-Party Integration:** Fetches real-time movie posters and extended ratings from the **OMDb API**.
+* **Modern UI:** A clean, responsive dashboard built with **Tailwind CSS**, featuring genre pills, formatted currency for budgets, and a focus on scannability.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technical Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Framework:** Next.js 16 (App Router)
+* **Bundler:** Turbopack
+* **State Management:** Zustand (for persistent search contexts)
+* **Styling:** Tailwind CSS
+* **Database:** SQLite (sqlite3)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
 
-## Learn More
+- `/app/api`: Serverless route handlers for Year, Genre, and Detail lookups.
+- `/app/store`: Zustand stores ensuring a seamless "back-button" experience without losing data.
+- `/data`: Local SQLite databases (included for immediate local demonstration).
+- `/app/movie-detail`: Dynamic routing for in-depth movie analysis.
 
-To learn more about Next.js, take a look at the following resources:
+## 🏃 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
+   `git clone https://github.com/SteveBishop88/omdb-react-next.git`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies:**
+   `npm install`
 
-## Deploy on Vercel
+3. **Set up environment variables:**
+   Create a `.env.local` file and add your OMDb API key:
+   `OMDB_API_KEY=your_key_here`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server:**
+   `npm run dev`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
+
+## 📝 Background
+
+This project serves as a technical demonstration of porting modern web architectures from Nuxt/Vue to Next.js/React, maintaining a high-quality user experience through smart state management and efficient SQL querying.
