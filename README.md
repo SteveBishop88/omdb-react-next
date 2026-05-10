@@ -1,6 +1,6 @@
 # OMDb Movie Explorer (Next.js 16 Edition)
 
-A high-performance movie exploration dashboard built with **Next.js 16** and **Turbopack**. This project is a React-based evolution of a modern web architecture, featuring persistent state management and a multi-database backend.
+A movie exploration dashboard built with **Next.js 16** and **Turbopack**. This project is a React-based evolution of a modern web architecture, featuring persistent state management and a multi-database backend.
 
 ## 🚀 Key Features
 
@@ -33,11 +33,17 @@ A high-performance movie exploration dashboard built with **Next.js 16** and **T
 2. **Install dependencies:**
    `npm install`
 
-3. **Set up environment variables:**
-   Create a `.env.local` file and add your OMDb API key:
-   `OMDB_API_KEY=your_key_here`
+3. **Obtain an OMDb API Key:**
+   * Go to [OMDb API Key Page](https://www.omdbapi.com/apikey.aspx).
+   * Choose the **FREE** tier (1,000 requests/day).
+   * Fill out the form and submit.
+   * **IMPORTANT:** Check your email and click the activation link sent by OMDb to enable the key.
 
-4. **Run the development server:**
+4. **Set up environment variables:**
+   Create a file named `.env.local` in the root directory and add your key:
+   `OMDB_API_KEY=your_activated_key_here`
+
+5. **Run the development server:**
    `npm run dev`
 
 Open [http://localhost:3000](http://localhost:3000) to see the result.
